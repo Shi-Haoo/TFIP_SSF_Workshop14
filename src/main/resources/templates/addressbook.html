@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+        <style>
+        .error {
+          color: red;
+        }
+      </style>
+
+        <style>
+        .col-form-label {
+            margin-left: 40px;
+        }
+        </style>
+  
+        <style>
+            .btn-primary {
+                margin-left: 370px;
+            }
+            </style>
+
+        <title>AddressBook Form</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">        
+        <div class="container-fluid w-100">
+            <a class="navbar-brand" href="#">Navbar</a>
+          </div>
+    </nav>
+    <br/>
+    
+    <form method="post" data-th-action="@{/contact}" data-th-object="${contact}">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputEmail3" data-th-field="*{name}">
+            <div class="error" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></div>
+          </div>
+        </div>
+        
+    <form method="post" data-th-action="@{/contact}" data-th-object="${contact}">
+        <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputEmail3" data-th-field="*{email}">
+            <div class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}"></div>
+          </div>
+        </div>
+    
+    <form method="post" data-th-action="@{/contact}" data-th-object="${contact}">
+        <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputEmail3" data-th-field="*{phoneNumber}">
+            <div class="error" data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"></div>
+            </div>
+        </div>
+    
+    <form method="post" data-th-action="@{/contact}" data-th-object="${contact}">
+        <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" id="inputEmail3" data-th-field="*{dateOfBirth}">
+            <div class="error" data-th-if="${#fields.hasErrors('dateOfBirth')}" data-th-errors="*{dateOfBirth}"></div>
+          </div>
+        </div>
+    
+        
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+</body>
+</html>
